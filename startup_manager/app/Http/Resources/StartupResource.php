@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class StartupResource extends JsonResource
@@ -14,6 +14,11 @@ class StartupResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'ID -> ' => $this->resource->id,
+            'Naziv startup-a -> ' => $this->resource->naziv,
+            'Projektant -> ' => $this->resource->projektant,
+            'Godina završetka -> ' => $this->resource->godina
+        ];
     }
 }
