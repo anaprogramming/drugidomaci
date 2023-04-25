@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\InvesticijeResource;
 use App\Models\Investicije;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class InvesticijeController extends Controller
 {

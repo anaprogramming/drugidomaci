@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\InvestitorResource;
+use App\Http\Resources\InvestitorReosurce;
 use App\Models\Investitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+
+
 
 
 class InvestitorController extends Controller
@@ -16,7 +18,7 @@ class InvestitorController extends Controller
     public function index()
     {
         $investitori = Investitor::all();
-        return InvestitorResource::collection($investitori);
+        return InvestitorReosurce::collection($investitori);
     }
 
     /**
@@ -40,7 +42,7 @@ class InvestitorController extends Controller
      */
     public function show(Investitor $investitor)
     {
-        return new InvestitorResource($investitor);
+        return new InvestitorReosurce($investitor);
     }
 
     /**
@@ -73,7 +75,7 @@ class InvestitorController extends Controller
 
         $investitor->save();
 
-        return response()->json(['Uspešno izmenjen investitor!', new InvestitorResource($investitor)]);
+        return response()->json(['Uspešno izmenjen investitor!', new InvestitorReosurce($investitor)]);
     }
 
     /**
