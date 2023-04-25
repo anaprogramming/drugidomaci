@@ -17,7 +17,9 @@ class InvestitorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'firma' => $this->faker->company(),
+            'godOsnivanja' => $this->faker->numberBetween($min = 1895, $max = 2022),
+            'website' => $this->faker->domainName(),
         ];
     }
 }

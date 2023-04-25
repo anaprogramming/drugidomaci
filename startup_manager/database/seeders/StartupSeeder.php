@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Startup;
 use Illuminate\Database\Seeder;
 
 class StartupSeeder extends Seeder
@@ -12,6 +12,7 @@ class StartupSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $startup1 = Startup::factory()->create();
+        $startup2 = Startup::factory()->create();
     }
 }

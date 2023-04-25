@@ -17,7 +17,9 @@ class StartupFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'naziv' => $this->faker->word(),
+            'projektant' => $this->faker->name(),
+            'godina' => $this->faker->numberBetween($min = 1990, $max = 2022),
         ];
     }
 }
